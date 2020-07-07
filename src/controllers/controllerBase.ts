@@ -3,16 +3,20 @@ import knex from '../database/connection';
 import { Request, Response } from 'express';
 
 class ControllerBase {
-    async index(request: Request, response: Response) {
-        const items = await knex('items').select('*');
-        const serializedItems = items.map(item => {
-            return {
-                id: item.id,
-                name: item.title,
-                image_url: `http://localhost:3333/uploads/${item.image}`
-            }
-        })
-        return response.json(serializedItems)
+    async buscaTudoBancoDados(tabela) {
+        return await knex(tabela).select('*');
+    }
+    async findById(tabela, id) {
+        return await knex(tabela).select('*').where(id = id);
+    }
+    async delete(tabela, id) {
+        return await knex(tabela).delete(id);
+    }
+    async post(tabela, objeto) {
+        return await knex(tabela).insert(objeto);
+    }
+    async put(tabela, objeto) {
+        return await knex(tabela).update(objeto);
     }
 }
 
