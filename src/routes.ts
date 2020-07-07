@@ -18,6 +18,9 @@ routes.get('/tiposanguineo', tipoSanguineoController.getAll)
 //roles
 routes.get('/roles', roleController.getAll)
 
+//Estoque
+routes.get('/estoque', estoqueController.getAll)
+
 
 //routes.post('/points', pointsController.create)
 //routes.get('/points', pointsController.index)
