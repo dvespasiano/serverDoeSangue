@@ -1,5 +1,5 @@
 import connection from "./src/database/connection";
-import path from 'path';
+import path = require('path');
 
 module.exports = {
     client: 'sqlite3',

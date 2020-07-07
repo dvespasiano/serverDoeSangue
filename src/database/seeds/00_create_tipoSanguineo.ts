@@ -1,4 +1,4 @@
-import Knex from 'knex';
+import Knex = require('knex');
 
 export async function seed(knex: Knex) {
     await knex('tipoSanguineo').insert([
