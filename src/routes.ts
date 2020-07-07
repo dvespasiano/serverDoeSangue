@@ -1,11 +1,15 @@
 import express = require('express');
 import knex from './database/connection';
-//import PointsController from './controllers/PointsController';
-//import ItemsControllers from './controllers/ItemsController';
+import EstoqueController from './controllers/EstoqueController';
+import PessoaController from './controllers/PessoaController';
+import RoleController from './controllers/RoleController';
+import TipoSanguineoController from './controllers/TipoSanguineoController';
 
-const routes = express.Router();
-//const pointsController = new PointsController()
-//const itemsController = new ItemsControllers()
+const routes = express.Router()
+const estoqueController = new EstoqueController()
+const pessoaController = new PessoaController()
+const roleController = new RoleController()
+const tipoSanguineoController = new TipoSanguineoController()
 
 //routes.get('/items', itemsController.index)
 
