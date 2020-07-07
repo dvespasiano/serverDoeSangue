@@ -2,7 +2,7 @@
 import knex from '../database/connection';
 
 class ControllerBase {
-    async buscaTudoBancoDados(tabela) {
+    async getAll(tabela) {
         return await knex(tabela).select('*');
     }
     async findById(tabela, id) {

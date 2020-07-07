@@ -1,10 +1,8 @@
 
 import knex from '../database/connection'
 import { Request, Response, response } from 'express'
-import ControllerBase from './ControllerBase';
 
 class TipoSanguineoController {
-    contBase = new ControllerBase();
     async post(request: Request, respons: Response) {
         const {
             nmTipoSanguineo,
@@ -18,7 +16,14 @@ class TipoSanguineoController {
         return response.json(tpSanguineo);
     }
     async getAll(request: Request, response: Response) {
-        return this.contBase.buscaTudoBancoDados('tipoSanguineo');
+        const tipoSanguineo = await knex('tipoSanguineo').select('*');
+        const serializedItems = tipoSanguineo.map(tpSanguineo => {
+            return {
+                id: tpSanguineo.id,
+                nmTipoSanguineo: tpSanguineo.nmTipoSanguineo,
+            }
+        })
+        return response.json(serializedItems)
     }
 }
 

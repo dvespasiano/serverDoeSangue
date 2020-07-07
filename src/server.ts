@@ -1,7 +1,6 @@
 import express = require("express");
 import cors = require('cors');
 import routes from './routes';
-// import knex from '../knexfile';
 
 const app = express();
 

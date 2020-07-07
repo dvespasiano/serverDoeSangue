@@ -12,7 +12,8 @@ const roleController = new RoleController()
 const tipoSanguineoController = new TipoSanguineoController()
 
 //tipoSanguineo
-routes.post('/tiposanguineo', tipoSanguineoController.post)
+// routes.post('/tiposanguineo', tipoSanguineoController.post)
+routes.get('/tiposanguineo', tipoSanguineoController.getAll)
 
 //routes.get('/items', itemsController.index)
 //routes.post('/points', pointsController.create)
