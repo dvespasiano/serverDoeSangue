@@ -1,5 +1,5 @@
-import knex from 'knex';
-import path from 'path'
+import knex = require('knex');
+import path = require('path')
 
 
 const connection = knex({
