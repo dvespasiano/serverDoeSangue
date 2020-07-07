@@ -1,4 +1,4 @@
-import express from 'express';
+import express = require('express');
 import knex from './database/connection';
 //import PointsController from './controllers/PointsController';
 //import ItemsControllers from './controllers/ItemsController';
