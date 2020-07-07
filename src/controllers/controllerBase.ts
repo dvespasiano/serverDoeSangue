@@ -1,6 +1,5 @@
 
 import knex from '../database/connection';
-import { Request, Response } from 'express';
 
 class ControllerBase {
     async buscaTudoBancoDados(tabela) {
