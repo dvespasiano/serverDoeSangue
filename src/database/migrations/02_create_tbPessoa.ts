@@ -8,6 +8,7 @@ export async function up(knex: Knex) {
         table.string('sobrenome').notNullable();
         table.string('email').notNullable();
         table.string('senha').notNullable();
+        table.enum('role',['ADMINISTRADOR', 'DOADOR', 'ROOT']).notNullable();
         table.integer('tipoSanguineo_id').notNullable().references('id').inTable('tipoSanguineo');
         table.integer('role_id').notNullable().references('id').inTable('role');
     })

@@ -14,7 +14,8 @@ class PessoaController {
                 email: pessoa.email,
                 senha: pessoa.senha,
                 tipoSanguineo_id: pessoa.tipoSanguineo_id,
-                
+                role: pessoa.role
+
             }
         })
         return response.json(serializedItems)
